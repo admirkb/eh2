@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CommonMethodsService } from '../services/commonMethods'
 @Component({
   selector: 'app-least-common-multiple',
   templateUrl: './least-common-multiple.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeastCommonMultipleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private commonMethodsService: CommonMethodsService) { }
 
   ngOnInit() {
   }
 
+  public leastCommonMultiple(min, max) {
+    return this.commonMethodsService.leastCommonMultiple(min, max)
+  }
 }

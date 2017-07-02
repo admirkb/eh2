@@ -22,4 +22,12 @@ describe("compute", () => {
         expect(res).toBe(24);
 
     })
+
+    it("Tests are great, but we want more time to develop them", () => {
+        expect(1).toBe(1);
+    })
+    
+    it("Tests are great, gives developers confidence", () => {
+        expect(1).toBe(1);
+    })
 })
