@@ -72,7 +72,7 @@ describe('RotateMethodComponent', () => {
 
   });
 
-    it('tests if rotate method shifts input by 4 using service call"', () => {
+  it('tests if rotate method shifts input by 4 using service call"', () => {
 
     let rotateInput = "1,2,3,4,5,6,7,8,9,10, 11, 12";
     let numericShift = 4;
@@ -85,6 +85,25 @@ describe('RotateMethodComponent', () => {
 
     rotateOutput = component.getRotate3(rotateInputTemp, shift);
     expect(rotateOutput).toEqual([5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4]);
+
+  });
+
+  it('tests if rotate method shifts Jade to the end"', () => {
+
+    let rotateInput = "Jade, Elita, Giselle";
+    let numericShift = 1;
+    let rotateOutput = [];
+
+    let temp = rotateInput.replace(/\s/g, '');
+    let rotateInputTemp = temp.split(',').map(function (n) {
+      return n.replace("\"", null);
+    });
+    // let rotateInputTemp = temp.split(',').map(Number);
+
+    let shift = numericShift;
+
+    rotateOutput = component.getRotate3(rotateInputTemp, shift);
+    expect(rotateOutput).toEqual(['Elita', 'Giselle', 'Jade']);
 
   });
 
