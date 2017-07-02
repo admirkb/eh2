@@ -2,6 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 
+
+import { compute } from './01 - Fundametals/compute';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -28,5 +31,16 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('app works!');
+  }));
+
+
+    it('Will return 0 if negative', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+
+        const res = compute(-1);
+        expect(res).toBe(0);
+
+    // expect(app.title).toEqual('app works!');
   }));
 });
