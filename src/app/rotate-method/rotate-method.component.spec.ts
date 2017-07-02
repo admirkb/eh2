@@ -98,7 +98,6 @@ describe('RotateMethodComponent', () => {
     let rotateInputTemp = temp.split(',').map(function (n) {
       return n.replace("\"", null);
     });
-    // let rotateInputTemp = temp.split(',').map(Number);
 
     let shift = numericShift;
 
